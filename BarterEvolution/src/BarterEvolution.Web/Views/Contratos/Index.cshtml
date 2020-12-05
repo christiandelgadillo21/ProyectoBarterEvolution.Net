@@ -1,0 +1,90 @@
+﻿@model IEnumerable<BarterEvolution.Infrastructure.Contratos>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaInicio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaVencimiento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaPago)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PlazoEstipulado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ValorContrato)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CedulaClienteNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CedulaUsuarioNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdArticuloNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdCondicionContratoNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NoProrrogaNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaInicio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaVencimiento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaPago)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PlazoEstipulado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValorContrato)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CedulaClienteNavigation.Apellidocliente1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CedulaUsuarioNavigation.Apellidousuario1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdArticuloNavigation.IdArticulo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdCondicionContratoNavigation.IdCondicionContrato)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NoProrrogaNavigation.NoProrroga)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.NoContrato">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.NoContrato">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.NoContrato">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
