@@ -1,0 +1,66 @@
+﻿@model IEnumerable<BarterEvolution.Infrastructure.Prorrogas>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaInicioProrroga)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaVencimientoProrroga)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MesesAPagar)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ValorMes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DiasVencidos)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NoContratoNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaInicioProrroga)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaVencimientoProrroga)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MesesAPagar)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValorMes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DiasVencidos)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NoContratoNavigation.NoContrato)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.NoProrroga">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.NoProrroga">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.NoProrroga">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

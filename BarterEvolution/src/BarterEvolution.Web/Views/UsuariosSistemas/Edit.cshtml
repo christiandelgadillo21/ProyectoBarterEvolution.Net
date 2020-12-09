@@ -1,0 +1,75 @@
+﻿@model BarterEvolution.Infrastructure.UsuariosSistema
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>UsuariosSistema</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="CedulaUsuario" />
+            <div class="form-group">
+                <label asp-for="IdDocumento" class="control-label"></label>
+                <select asp-for="IdDocumento" class="form-control" asp-items="ViewBag.IdDocumento"></select>
+                <span asp-validation-for="IdDocumento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdUsuario" class="control-label"></label>
+                <select asp-for="IdUsuario" class="form-control" asp-items="ViewBag.IdUsuario"></select>
+                <span asp-validation-for="IdUsuario" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Nombreusuario1" class="control-label"></label>
+                <input asp-for="Nombreusuario1" class="form-control" />
+                <span asp-validation-for="Nombreusuario1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Nombreusuario2" class="control-label"></label>
+                <input asp-for="Nombreusuario2" class="form-control" />
+                <span asp-validation-for="Nombreusuario2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Apellidousuario1" class="control-label"></label>
+                <input asp-for="Apellidousuario1" class="form-control" />
+                <span asp-validation-for="Apellidousuario1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Apellidousuario2" class="control-label"></label>
+                <input asp-for="Apellidousuario2" class="form-control" />
+                <span asp-validation-for="Apellidousuario2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Usuario" class="control-label"></label>
+                <input asp-for="Usuario" class="form-control" />
+                <span asp-validation-for="Usuario" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Clave" class="control-label"></label>
+                <input asp-for="Clave" class="form-control" />
+                <span asp-validation-for="Clave" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,60 @@
+﻿@model BarterEvolution.Infrastructure.Prorrogas
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>Prorrogas</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="NoProrroga" />
+            <div class="form-group">
+                <label asp-for="NoContrato" class="control-label"></label>
+                <select asp-for="NoContrato" class="form-control" asp-items="ViewBag.NoContrato"></select>
+                <span asp-validation-for="NoContrato" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaInicioProrroga" class="control-label"></label>
+                <input asp-for="FechaInicioProrroga" class="form-control" />
+                <span asp-validation-for="FechaInicioProrroga" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaVencimientoProrroga" class="control-label"></label>
+                <input asp-for="FechaVencimientoProrroga" class="form-control" />
+                <span asp-validation-for="FechaVencimientoProrroga" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MesesAPagar" class="control-label"></label>
+                <input asp-for="MesesAPagar" class="form-control" />
+                <span asp-validation-for="MesesAPagar" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ValorMes" class="control-label"></label>
+                <input asp-for="ValorMes" class="form-control" />
+                <span asp-validation-for="ValorMes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DiasVencidos" class="control-label"></label>
+                <input asp-for="DiasVencidos" class="form-control" />
+                <span asp-validation-for="DiasVencidos" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

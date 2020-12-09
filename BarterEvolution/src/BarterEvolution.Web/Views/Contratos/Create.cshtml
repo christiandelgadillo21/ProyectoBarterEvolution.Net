@@ -1,72 +1,179 @@
 ﻿@model BarterEvolution.Infrastructure.Contratos
 
-@{
-    ViewData["Title"] = "Create";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
+@{ ViewData["Title"] = "Create";
+                Layout = "~/Views/Shared/_Layout.cshtml"; }
 
-<h1>Create</h1>
-
-<h4>Contratos</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
+<div class="color">
+    <div class="col-12">
+        <h6 class="tituloformulario">GENERAR CONTRATO</h6>
+        <hr class="lineatitulo">
+    </div>
+    <div class="col-12">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="NoContrato" class="control-label"></label>
-                <input asp-for="NoContrato" class="form-control" />
-                <span asp-validation-for="NoContrato" class="text-danger"></span>
+            <div class="cajaform row">
+                <div class="col-12 tit">Información contrato</div>
+
+                <div class="col-6">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" asp-for="NoContrato">No. contrato:</label>
+                            </div>
+                            <input type="text" class="form-control" asp-for="NoContrato" />
+                            <span asp-validation-for="NoContrato" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" asp-for="IdCondicionContrato">Condición contrato:</label>
+                            </div>
+                            <select type="text" class="form-control" asp-for="IdCondicionContrato" asp-items="ViewBag.IdCondicionContrato"></select>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-6">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" asp-for="CedulaCliente">Cédula cliente:</label>
+                            </div>
+                            <select type="text" class="form-control" asp-for="CedulaCliente" asp-items="ViewBag.CedulaCliente"></select>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-6">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" asp-for="CedulaUsuario">Cédula usuario:</label>
+                            </div>
+                            <select type="text" class="form-control" asp-for="CedulaUsuario" asp-items="ViewBag.CedulaUsuario"></select>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-            <div class="form-group">
-                <label asp-for="CedulaCliente" class="control-label"></label>
-                <select asp-for="CedulaCliente" class ="form-control" asp-items="ViewBag.CedulaCliente"></select>
+
+            <div class="cajaform row">
+                <div class="col-12 tit">Información complementaria</div>
+
+                <div class="col-6">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" asp-for="IdArticulo">No. artículo:</label>
+                            </div>
+                            <select type="text" class="form-control" asp-for="IdArticulo" asp-items="ViewBag.IdArticulo"></select>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-6">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" asp-for="NoProrroga">No. prórroga:</label>
+                            </div>
+                            <select type="text" class="form-control" asp-for="NoProrroga" asp-items="ViewBag.NoProrroga"></select>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-6">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" asp-for="PlazoEstipulado">Plazo estipulado:</label>
+                            </div>
+                            <input type="text" class="form-control" asp-for="PlazoEstipulado" />
+                            <span asp-validation-for="PlazoEstipulado" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" asp-for="ValorContrato">Valor contrato:</label>
+                            </div>
+                            <input type="text" class="form-control" asp-for="ValorContrato" />
+                            <span asp-validation-for="ValorContrato" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+
+
             </div>
-            <div class="form-group">
-                <label asp-for="CedulaUsuario" class="control-label"></label>
-                <select asp-for="CedulaUsuario" class ="form-control" asp-items="ViewBag.CedulaUsuario"></select>
+
+            <div class="cajaform row">
+                <div class="col-12 tit">Fecha contrato</div>
+
+                <div class="col-6">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" asp-for="FechaInicio">Fecha inicio:</label>
+                            </div>
+                            <input class="form-control" asp-for="FechaInicio" />
+                            <span asp-validation-for="FechaInicio" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" asp-for="FechaVencimiento">Fecha vencimiento:</label>
+                            </div>
+                            <input class="form-control" asp-for="FechaVencimiento" />
+                            <span asp-validation-for="FechaVencimiento" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" asp-for="FechaPago">Fecha pago:</label>
+                            </div>
+                            <input class="form-control" asp-for="FechaPago" />
+                        </div>
+                    </div>
+                </div>
+
             </div>
-            <div class="form-group">
-                <label asp-for="FechaInicio" class="control-label"></label>
-                <input asp-for="FechaInicio" class="form-control" />
-                <span asp-validation-for="FechaInicio" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FechaVencimiento" class="control-label"></label>
-                <input asp-for="FechaVencimiento" class="form-control" />
-                <span asp-validation-for="FechaVencimiento" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="PlazoEstipulado" class="control-label"></label>
-                <input asp-for="PlazoEstipulado" class="form-control" />
-                <span asp-validation-for="PlazoEstipulado" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="IdArticulo" class="control-label"></label>
-                <select asp-for="IdArticulo" class ="form-control" asp-items="ViewBag.IdArticulo"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="IdCondicionContrato" class="control-label"></label>
-                <select asp-for="IdCondicionContrato" class ="form-control" asp-items="ViewBag.IdCondicionContrato"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="NoProrroga" class="control-label"></label>
-                <select asp-for="NoProrroga" class ="form-control" asp-items="ViewBag.NoProrroga"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="ValorContrato" class="control-label"></label>
-                <input asp-for="ValorContrato" class="form-control" />
-                <span asp-validation-for="ValorContrato" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+
+
+
+
+            <div class="row cajaboton">
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                    <input type="submit" value="Guardar" class="btnguardar btn btn-primary" />
+                    <input value="Cancelar" type="reset" class="btncancelar btn btn-primary" />
+                </div>
+
+
+                <div class="col-lg-4 col-md-4 col-sm-none col-xs-none"></div>
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 botones">
+                    <a class="btnverlista" asp-action="Index">Ver lista</a>
+                </div>
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {

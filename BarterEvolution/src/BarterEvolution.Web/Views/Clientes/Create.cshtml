@@ -5,59 +5,200 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Create</h1>
-
-<h4>Clientes</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
+<div class="row" >
+    <div class="col-12">
+        <h6 class="tituloformulario">REGISTRAR CLIENTES</h6>
+        <hr class="lineatitulo">
+    </div>
+    <div class="col-12">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="IdDocumento" class="control-label"></label>
-                <select asp-for="IdDocumento" class ="form-control" asp-items="ViewBag.IdDocumento"></select>
+            <div class="cajaform row">
+                <div class="col-12 tit">Informacion Personal</div>
+
+                <div class="col-6">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text " asp-for="IdDocumento">Tipo de Documento:</label>
+                            </div>
+                            <select type="text" class="form-control" asp-for="IdDocumento" asp-items="ViewBag.IdDocumento"></select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" asp-for=" CedulaCliente">Cedula Cliente:</label>
+                            </div>
+                            <input type="text" class="form-control" asp-for="CedulaCliente" />
+                            <span asp-validation-for=" CedulaCliente" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" asp-for="Genero">Genero:</label>
+                            </div>
+                            <select type="text" class="form-control" asp-for="Genero" asp-items="ViewBag.Genero"></select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" asp-for="IdTipocliente">Tipo Cliente:</label>
+                            </div>
+
+                            <select type="text" class="form-control" asp-for="IdTipocliente" asp-items="ViewBag.IdTipocliente"></select>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-            <div class="form-group">
-                <label asp-for="IdTipocliente" class="control-label"></label>
-                <select asp-for="IdTipocliente" class ="form-control" asp-items="ViewBag.IdTipocliente"></select>
+
+            <div class="cajaform row">
+                <div class="col-12 tit"> Nombres Completos</div>
+
+                <div class="col-6">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" asp-for="Nombrecliente1">Primer Nombre:</label>
+                            </div>
+                            <input type="text" class="form-control" asp-for="Nombrecliente1" />
+                            <span asp-validation-for="Nombrecliente1" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" asp-for="Nombrecliente2">Segundo Nombre:</label>
+                            </div>
+                            <input type="text" class="form-control" asp-for="Nombrecliente2" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" asp-for="Apellidocliente1">Primer Apellido:</label>
+                            </div>
+                            <input type="text" class="form-control" asp-for="Apellidocliente1" />
+                            <span asp-validation-for="Apellidocliente1" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" asp-for="Apellidocliente2">Segundo Apellido:</label>
+                            </div>
+                            <input type="text" class="form-control" asp-for="Apellidocliente2" />
+                        </div>
+                    </div>
+                </div>
+
+
             </div>
-            <div class="form-group">
-                <label asp-for="Nombrecliente1" class="control-label"></label>
-                <input asp-for="Nombrecliente1" class="form-control" />
-                <span asp-validation-for="Nombrecliente1" class="text-danger"></span>
+
+            <div class="cajaform row">
+                <div class="col-12 tit">Ubicación</div>
+
+                <div class="col-6">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text " asp-for="DireccionResidencia">Dirección:</label>
+                            </div>
+                            <input type="text" class="form-control" asp-for="DireccionResidencia" />
+                            <span asp-validation-for="DireccionResidencia" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" asp-for="IdLocalidad">Localidad:</label>
+                            </div>
+                            <select type="text" class="form-control" asp-for="IdLocalidad" asp-items="ViewBag.IdLocalidad"></select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" asp-for="Ciudad">Ciudad:</label>
+                            </div>
+                            <input type="text" class="form-control" asp-for="Ciudad"  />
+                            <span asp-validation-for="Ciudad" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+
+
+
             </div>
-            <div class="form-group">
-                <label asp-for="Apellidocliente1" class="control-label"></label>
-                <input asp-for="Apellidocliente1" class="form-control" />
-                <span asp-validation-for="Apellidocliente1" class="text-danger"></span>
+
+            <div class="cajaform row">
+                <div class="col-12 tit">Información de Contacto</div>
+
+                <div class="col-6">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text " asp-for="TelefonoMovil">Teléfono Movil:</label>
+                            </div>
+                            <input type="text" class="form-control" asp-for="TelefonoMovil" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" asp-for="Email">Email:</label>
+                            </div>
+                            <input type="text" class="form-control" asp-for="Email" />
+                        </div>
+                    </div>
+                </div>
+
+
             </div>
-            <div class="form-group">
-                <label asp-for="Genero" class="control-label"></label>
-                <select asp-for="Genero" class ="form-control" asp-items="ViewBag.Genero"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="DireccionResidencia" class="control-label"></label>
-                <input asp-for="DireccionResidencia" class="form-control" />
-                <span asp-validation-for="DireccionResidencia" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Ciudad" class="control-label"></label>
-                <input asp-for="Ciudad" class="form-control" />
-                <span asp-validation-for="Ciudad" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="IdLocalidad" class="control-label"></label>
-                <select asp-for="IdLocalidad" class ="form-control" asp-items="ViewBag.IdLocalidad"></select>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+            <div class="row cajaboton">
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                    <input  type="submit" value="Guardar" class="btnguardar btn btn-primary" />
+                    <input value="Cancelar" type="reset" class="btncancelar btn btn-primary"/>
+                </div>
+
+
+                <div class="col-lg-4 col-md-4 col-sm-none col-xs-none"></div>
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 botones">
+                    <a class="btnverlista" asp-action="Index">Ver lista</a>
+                </div>
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {

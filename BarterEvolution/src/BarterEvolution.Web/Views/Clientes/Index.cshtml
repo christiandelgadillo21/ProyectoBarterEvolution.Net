@@ -5,98 +5,92 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Index</h1>
+<h1 class="titulolista">Lista Clientes</h1>
+<div class="row margen justify-content-end">
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Nombrecliente1)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Nombrecliente2)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Apellidocliente1)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Apellidocliente2)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TelefonoMovil)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Email)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DireccionResidencia)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Ciudad)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.GeneroNavigation)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IdDocumentoNavigation)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IdLocalidadNavigation)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IdTipoclienteNavigation)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nombrecliente1)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nombrecliente2)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Apellidocliente1)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Apellidocliente2)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TelefonoMovil)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DireccionResidencia)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Ciudad)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.GeneroNavigation.IdGenero)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdDocumentoNavigation.IdTipoDocumento)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdLocalidadNavigation.NombreLocalidad)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdTipoclienteNavigation.IdTipocliente)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.CedulaCliente">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.CedulaCliente">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.CedulaCliente">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+    <div class="col-3 align-content-end">
+            <a class="btncrear" asp-action="Create">Registrar Cliente</a>
+
+</div>
+</div>
+    <div class="row">
+        <div class="col-12">
+            <div class="table100">
+                <table>
+                    <thead>
+                        <tr class="table100-head">
+                            <th class="column1">
+
+                            </th>
+                            <th class="column1">
+                                Tipo doc.
+                            </th>
+                            <th class="column2">
+                                Nombres
+                            </th>
+                            <th class="column3">
+                                Apellidos
+                            </th>
+                            <th class="column4">
+                                Genero
+                            </th>
+                            <th class="column5">
+                                celular
+                            </th>
+                            <th class="column6">
+                                Email
+                            </th>
+                            <th class="column1">
+                                Direccion
+                            </th>
+                            <th class="column1">
+                                Tipo Cliente
+                            </th>
+
+
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                        <tr>
+                            <td class="column1">
+
+                                <a class="btnver" asp-action="Details" asp-route-id="@item.CedulaCliente">Consultar</a> 
+
+                            </td>
+                            <td class="column1">
+                                @Html.DisplayFor(modelItem => item.IdDocumentoNavigation.IdTipoDocumento) @Html.DisplayFor(modelItem => item.CedulaCliente)
+                            </td>
+                            <td class="column2">
+                                @Html.DisplayFor(modelItem => item.Nombrecliente1) @Html.DisplayFor(modelItem => item.Nombrecliente2)
+                            </td>
+
+                            <td class="column3">
+                                @Html.DisplayFor(modelItem => item.Apellidocliente1) @Html.DisplayFor(modelItem => item.Apellidocliente2)
+                            </td>
+                            <td class="column4">
+                                @Html.DisplayFor(modelItem => item.Genero)
+                            </td>
+                            <td class="column5">
+                                @Html.DisplayFor(modelItem => item.TelefonoMovil)
+                            </td>
+                            <td class="column6">
+                                @Html.DisplayFor(modelItem => item.Email)
+                            </td>
+                            <td class="column1">
+                                @Html.DisplayFor(modelItem => item.DireccionResidencia)
+                            </td>
+                            <td class="column1">
+                                @Html.DisplayFor(modelItem => item.IdTipoclienteNavigation.IdTipocliente)
+                            </td>
+
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+

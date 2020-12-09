@@ -1,0 +1,84 @@
+﻿@model IEnumerable<BarterEvolution.Infrastructure.UsuariosSistema>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombreusuario1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombreusuario2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Apellidousuario1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Apellidousuario2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Usuario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Clave)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdDocumentoNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdUsuarioNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombreusuario1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombreusuario2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Apellidousuario1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Apellidousuario2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Usuario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Clave)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdDocumentoNavigation.IdTipoDocumento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdUsuarioNavigation.IdTipoUsuario)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.CedulaUsuario">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.CedulaUsuario">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.CedulaUsuario">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

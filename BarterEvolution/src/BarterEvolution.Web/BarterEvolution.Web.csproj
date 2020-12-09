@@ -7,6 +7,99 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Views\Inventarios\**" />
+    <Compile Remove="Views\Prorrogas\**" />
+    <Compile Remove="Views\UsuariosSistemas\**" />
+    <Compile Remove="Views\Ventas\**" />
+    <Content Remove="Views\Inventarios\**" />
+    <Content Remove="Views\Prorrogas\**" />
+    <Content Remove="Views\UsuariosSistemas\**" />
+    <Content Remove="Views\Ventas\**" />
+    <EmbeddedResource Remove="Views\Inventarios\**" />
+    <EmbeddedResource Remove="Views\Prorrogas\**" />
+    <EmbeddedResource Remove="Views\UsuariosSistemas\**" />
+    <EmbeddedResource Remove="Views\Ventas\**" />
+    <None Remove="Views\Inventarios\**" />
+    <None Remove="Views\Prorrogas\**" />
+    <None Remove="Views\UsuariosSistemas\**" />
+    <None Remove="Views\Ventas\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Views\Inventarios\Create.cshtml" />
+    <None Include="Views\Inventarios\Delete.cshtml" />
+    <None Include="Views\Inventarios\Details.cshtml" />
+    <None Include="Views\Inventarios\Edit.cshtml" />
+    <None Include="Views\Inventarios\Index.cshtml" />
+    <None Include="Views\LegalidadArticulos\Create.cshtml" />
+    <None Include="Views\LegalidadArticulos\Delete.cshtml" />
+    <None Include="Views\LegalidadArticulos\Details.cshtml" />
+    <None Include="Views\LegalidadArticulos\Edit.cshtml" />
+    <None Include="Views\LegalidadArticulos\Index.cshtml" />
+    <None Include="Views\Prorrogas\Create.cshtml" />
+    <None Include="Views\Prorrogas\Delete.cshtml" />
+    <None Include="Views\Prorrogas\Details.cshtml" />
+    <None Include="Views\Prorrogas\Edit.cshtml" />
+    <None Include="Views\Prorrogas\Index.cshtml" />
+    <None Include="Views\UsuariosSistemas\Create.cshtml" />
+    <None Include="Views\UsuariosSistemas\Delete.cshtml" />
+    <None Include="Views\UsuariosSistemas\Details.cshtml" />
+    <None Include="Views\UsuariosSistemas\Edit.cshtml" />
+    <None Include="Views\UsuariosSistemas\Index.cshtml" />
+    <None Include="Views\Ventas\Create.cshtml" />
+    <None Include="Views\Ventas\Delete.cshtml" />
+    <None Include="Views\Ventas\Details.cshtml" />
+    <None Include="Views\Ventas\Edit.cshtml" />
+    <None Include="Views\Ventas\Index.cshtml" />
+    <None Include="wwwroot\css\dash\css\bootstrap-grid.css.map" />
+    <None Include="wwwroot\css\dash\css\bootstrap-grid.min.css.map" />
+    <None Include="wwwroot\css\dash\css\bootstrap-reboot.css.map" />
+    <None Include="wwwroot\css\dash\css\bootstrap-reboot.min.css.map" />
+    <None Include="wwwroot\css\dash\css\bootstrap.css.map" />
+    <None Include="wwwroot\css\dash\css\bootstrap.min.css.map" />
+    <None Include="wwwroot\css\dash\js\bootstrap.bundle.js" />
+    <None Include="wwwroot\css\dash\js\bootstrap.bundle.js.map" />
+    <None Include="wwwroot\css\dash\js\bootstrap.bundle.min.js" />
+    <None Include="wwwroot\css\dash\js\bootstrap.bundle.min.js.map" />
+    <None Include="wwwroot\css\dash\js\bootstrap.js" />
+    <None Include="wwwroot\css\dash\js\bootstrap.js.map" />
+    <None Include="wwwroot\css\dash\js\bootstrap.min.js" />
+    <None Include="wwwroot\css\dash\js\bootstrap.min.js.map" />
+    <None Include="wwwroot\css\dash\js\idioma.js" />
+    <None Include="wwwroot\css\dash\js\jquery-3.1.1.min.js" />
+    <None Include="wwwroot\css\dash\js\jquery-3.3.1.min.js" />
+    <None Include="wwwroot\css\dash\js\jqueryTranslator-master\.gitignore" />
+    <None Include="wwwroot\css\dash\js\jqueryTranslator-master\demo\js\jqueryTranslator.js" />
+    <None Include="wwwroot\css\dash\js\jqueryTranslator-master\demo\js\jqueryTranslator.min.js" />
+    <None Include="wwwroot\css\dash\js\jqueryTranslator-master\jqueryTranslator-master\.gitignore" />
+    <None Include="wwwroot\css\dash\js\jqueryTranslator-master\jqueryTranslator-master\demo\js\jqueryTranslator.js" />
+    <None Include="wwwroot\css\dash\js\jqueryTranslator-master\jqueryTranslator-master\demo\js\jqueryTranslator.min.js" />
+    <None Include="wwwroot\css\dash\js\jqueryTranslator-master\jqueryTranslator-master\jqueryTranslator.js" />
+    <None Include="wwwroot\css\dash\js\jqueryTranslator-master\jqueryTranslator-master\jqueryTranslator.min.js" />
+    <None Include="wwwroot\css\dash\js\jqueryTranslator-master\jqueryTranslator-master\readme.md" />
+    <None Include="wwwroot\css\dash\js\jqueryTranslator-master\jqueryTranslator.js" />
+    <None Include="wwwroot\css\dash\js\jqueryTranslator-master\jqueryTranslator.min.js" />
+    <None Include="wwwroot\css\dash\js\jqueryTranslator-master\readme.md" />
+    <None Include="wwwroot\css\dash\js\main.js" />
+    <None Include="wwwroot\css\dash\js\plugins\bootstrap-datepicker.min.js" />
+    <None Include="wwwroot\css\dash\js\plugins\bootstrap-notify.min.js" />
+    <None Include="wwwroot\css\dash\js\plugins\chart.js" />
+    <None Include="wwwroot\css\dash\js\plugins\dataTables.bootstrap.min.js" />
+    <None Include="wwwroot\css\dash\js\plugins\dropzone.js" />
+    <None Include="wwwroot\css\dash\js\plugins\fullcalendar.min.js" />
+    <None Include="wwwroot\css\dash\js\plugins\jquery-ui.custom.min.js" />
+    <None Include="wwwroot\css\dash\js\plugins\jquery.dataTables.min.js" />
+    <None Include="wwwroot\css\dash\js\plugins\jquery.vmap.min.js" />
+    <None Include="wwwroot\css\dash\js\plugins\jquery.vmap.sampledata.js" />
+    <None Include="wwwroot\css\dash\js\plugins\jquery.vmap.world.js" />
+    <None Include="wwwroot\css\dash\js\plugins\moment.min.js" />
+    <None Include="wwwroot\css\dash\js\plugins\pace.min.js" />
+    <None Include="wwwroot\css\dash\js\plugins\select2.min.js" />
+    <None Include="wwwroot\css\dash\js\plugins\sweetalert.min.js" />
+    <None Include="wwwroot\css\dash\js\popper.min.js" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Update="app.db" CopyToOutputDirectory="PreserveNewest" ExcludeFromSingleFile="true" />
   </ItemGroup>
 

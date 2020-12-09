@@ -1,0 +1,90 @@
+﻿@model IEnumerable<BarterEvolution.Infrastructure.Ventas>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaFactura)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PrecioUnitario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cantidad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SubTotal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Iva)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ValorTotal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CedulaClienteNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CedulaUsuarioNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdArticuloNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdEstadoArticuloNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaFactura)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrecioUnitario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cantidad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SubTotal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Iva)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValorTotal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CedulaClienteNavigation.Apellidocliente1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CedulaUsuarioNavigation.Apellidousuario1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdArticuloNavigation.IdArticulo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdEstadoArticuloNavigation.IdEstadoArticulo)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.NoFactura">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.NoFactura">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.NoFactura">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

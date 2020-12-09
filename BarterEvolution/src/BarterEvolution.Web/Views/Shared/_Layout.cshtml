@@ -4,44 +4,102 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - BarterEvolution.Web</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
+
+    <link rel="stylesheet" type="text/css" href="~/css/dash/css/main.css">
+
+    <link rel="stylesheet" type="text/css" href="~/css/dash/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="~/css/formularios.css">
+    <link rel="stylesheet" type="text/css" href="~/css/tablas.css">
+    <!-- Font-icon css-->
+
+    <link rel="icon" type="image/png" href="~/css/dash/img/HORIZONTAL_LOGO-removebg-preview.png">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">BarterEvolution.Web</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <partial name="_LoginPartial" />
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+<body class="app sidebar-mini">
+    <header class="app-header">
+        <a class="app-header__logo " href="#">Barter <span>Evolution</span> </a>
+        <!-- Sidebar botin toggle --><a class="app-sidebar__toggle" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"></a>
+        <!-- Navbar Menu Lateral-->
+
+        <ul class="app-nav">
+
+            <!-- Envio correo-->
+            <li class="dropdown">
+                <a class="app-nav__item" target="principal" href="#" aria-label="Open Profile Menu"><i class="fa fa-envelope-open-o"></i></a>
+            </li>
+            <!-- User Menu-->
+            <li class="dropdown">
+                <a class="app-nav__item" href="#" data-toggle="dropdown" aria-label="Open Profile Menu"><i class="fa fa-user fa-lg"></i></a>
+                <ul class="dropdown-menu settings-menu dropdown-menu-right">
+
+                    <li><a class="dropdown-item" href="#" target="principal"><i class="fa fa-user fa-lg espacio"></i><span class="lang " key="cuenta">Mi Cuenta</span></a></li>
+                    <li><a class="dropdown-item" href="#"><i class="fa fa-sign-out fa-lg"></i>  <span class="lang " key="cerrar">Cerra Sesión</span></a></li>
+                </ul>
+            </li>
+        </ul>
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
+    <!-- Sidebar menu-->
+    <div class="app-sidebar__overlay" data-toggle="sidebar"> </div>
+    <aside class="app-sidebar">
+        <div class="app-sidebar__user">
+            <img class="app-sidebar__user-avatar" src="~/css/dash/img/usuario.png" alt="User Image">
+            <div>
+                <p class="app-sidebar__user-name">Administrador</p>
+
+            </div>
+        </div>
+        <ul class="app-menu">
+
+            <li class="treeview"><a class="app-menu__item active " ><i><img class="espacio" src="~/css/dash/img/inicio.png" alt="" /></i><span class="app-menu__label">Dashboard</span></a></li>
+
+            <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i><img class="espacio" src="~/css/dash/img/contrato (4).png" alt="" /></i><span class="app-menu__label">Contratos</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+                <ul class="treeview-menu">
+                    <li><a class="treeview-item" asp-area="" asp-controller="Clientes" asp-action="Create"><i><img class="espacio" src="~/css/dash/img/cliente.png" alt="" /></i>Clientes</a></li>
+                    <li><a class="treeview-item" asp-area="" asp-controller="Articulos" asp-action="Create"><i><img class="espacio" src="~/css/dash/img/articulo.png" alt="" /></i>Artículos</a></li>
+                    <li><a class="treeview-item" asp-area="" asp-controller="LegalidadArticulos" asp-action="Create"><i><img class="espacio" src="~/css/dash/img/ley.png" alt="" /></i>Legalidad Articulos</a></li>
+                    <li><a class="treeview-item" asp-area="" asp-controller="Contratos" asp-action="Create"><i><img class="espacio" src="~/css/dash/img/firma.png" alt="" /></i> Contratos</a></li>
+                    <li><a class="treeview-item" asp-area="" asp-controller="Prorrogas" asp-action="Create"><i><img class="espacio" src="~/css/dash/img/prorroga.png" alt="" /></i>Prórrogas</a></li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a class="app-menu__item" href="#" data-toggle="treeview"><img class="espacio" src="~/css/dash/img/inventario (5).png" alt="" /><span class=" app-menu__label">Inventario</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+                <ul class="treeview-menu">
+
+                    <li><a class="treeview-item" asp-area="" asp-controller="Articulos" asp-action="Create"><i><img class="espacio" src="~/css/dash/img/negocios-y-finanzas.png" alt="" /></i><span>Registrar Artículos</span></a></li>
+                    <li><a class="treeview-item" asp-area="" asp-controller="Inventarios" asp-action="Create"><i><img class="espacio" src="~/css/dash/img/inventario (9).png" alt="" /></i><span >Registrar Inventario</span></a></li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a class="app-menu__item" href="#" data-toggle="treeview"><img class="espacio" src="~/css/dash/img/rebaja.png" alt="" /><span class="app-menu__label" >Ventas</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+                <ul class="treeview-menu">
+
+                    <li><a class="treeview-item" asp-area="" asp-controller="Clientes" asp-action="Create" ><i><img class="espacio" src="~/css/dash/img/valor (1).png" alt="" /></i><span>Clientes</span></a></li>
+                    <li><a class="treeview-item" asp-area="" asp-controller="Ventas" asp-action="Create" ><i><img class="espacio" src="~/css/dash/img/ventas.png" alt="" /></i><span >Ventas</span></a></li>
+
+                </ul>
+            </li>
+            <li class="treeview">
+                <a class="app-menu__item" href="#" data-toggle="treeview"><img class="espacio" src="~/css/dash/img/grupo.png" alt="" /><span class="app-menu__label" >Usuarios</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+                <ul class="treeview-menu">
+                    <li><a class="treeview-item" asp-area="" asp-controller="UsuariosSistemas" asp-action="Create"><i><img class="espacio" src="~/css/dash/img/registro.png" alt="" /></i><span >Registrar Usuarios</span></a></li>
+                </ul>
+            </li>
+        </ul>
+    </aside>
+
+    <div class="app-content">
+        <main role="main">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2020 - BarterEvolution.Web - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <!-- Essential javascripts for application to work-->
+
+    <script src="~/css/dash/js/jquery-3.1.1.min.js"></script>
+    <script src="~/css/dash/js/jquery-3.3.1.min.js"></script>
+    <script src="~/css/dash/js/popper.min.js"></script>
+    <script src="~/css/dash/js/bootstrap.min.js"></script>
+    <script src="~/css/dash/js/main.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @RenderSection("Scripts", required: false)

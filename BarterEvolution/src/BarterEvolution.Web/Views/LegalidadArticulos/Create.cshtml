@@ -1,0 +1,122 @@
+﻿@model BarterEvolution.Infrastructure.LegalidadArticulos
+
+@{ ViewData["Title"] = "Create";
+                Layout = "~/Views/Shared/_Layout.cshtml"; }
+
+<div class="color">
+    <div class="col-12">
+        <h6 class="tituloformulario">REGISTRAR LEGALIDAD</h6>
+        <hr class="lineatitulo">
+    </div>
+    <div class="col-12">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="cajaform row">
+                <div class="col-12 tit">Información básica</div>
+
+                <div class="col-6">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" asp-for="FechaLegalidad">Fecha:</label>
+                            </div>
+                            <input  class="form-control" asp-for="FechaLegalidad" />
+                            <span asp-validation-for="FechaLegalidad" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" asp-for="CedulaCliente">Cédula cliente:</label>
+                            </div>
+                            <select type="text" class="form-control" asp-for="CedulaCliente" asp-items="ViewBag.CedulaCliente"></select>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-6">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" asp-for="IdArticulo">No. artículo:</label>
+                            </div>
+                            <select type="text" class="form-control" asp-for="IdArticulo" asp-items="ViewBag.IdArticulo"></select>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="cajaform row">
+                <div class="col-12 tit">Información legalidad</div>
+
+                <div class="col-6">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" asp-for="IdLegalidad ">Id Legalidad:</label>
+                            </div>
+                            <input type="text" class="form-control" asp-for="IdLegalidad " />
+                            <span asp-validation-for="IdLegalidad " class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-6">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" asp-for="CondLegalidad">Condición:</label>
+                            </div>
+                            <select type="text" class="form-control" asp-for="CondLegalidad" asp-items="ViewBag.CondLegalidad"></select>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-6">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" asp-for="DescripcionLegalidad">Descripción legalidad:</label>
+                            </div>
+                            <input type="text" class="form-control" asp-for="DescripcionLegalidad" />
+                            <span asp-validation-for="DescripcionLegalidad" class="text-danger"></span>
+
+                        </div>
+                        <small id="passwordHelpBlock" class="form-text text-muted">
+                            Si la condición de legalidad es Sin Factura debe ingresar CONSTANCIA DE LEGALIDAD ANEXO AL CONTRATO.
+                        </small>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+
+
+            <div class="row cajaboton">
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                    <input type="submit" value="Guardar" class="btnguardar btn btn-primary" />
+                    <input value="Cancelar" type="reset" class="btncancelar btn btn-primary" />
+                </div>
+
+
+                <div class="col-lg-4 col-md-4 col-sm-none col-xs-none"></div>
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 botones">
+                    <a class="btnverlista" asp-action="Index">Ver lista</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

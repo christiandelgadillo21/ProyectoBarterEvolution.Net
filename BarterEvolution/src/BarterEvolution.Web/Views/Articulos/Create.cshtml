@@ -1,0 +1,162 @@
+﻿@model BarterEvolution.Infrastructure.Articulos
+
+@{ ViewData["Title"] = "Create";
+                Layout = "~/Views/Shared/_Layout.cshtml"; }
+
+<div class="color">
+    <div class="col-12">
+        <h6 class="tituloformulario">REGISTRAR ARTÍCULO</h6>
+        <hr class="lineatitulo">
+    </div>
+    <div class="col-12">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="cajaform row">
+                <div class="col-12 tit">Información artículo</div>
+
+                <div class="col-6">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" asp-for="IdArticulo">No. artículo:</label>
+                            </div>
+                            <input type="text" class="form-control" asp-for="IdArticulo" />
+                            <span asp-validation-for="IdArticulo" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" asp-for="IdCategoria">Categoria:</label>
+                            </div>
+                            <select type="text" class="form-control" asp-for="IdCategoria" asp-items="ViewBag.IdCategoria"></select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" asp-for="IdEstadoArticulo">Estado del artículo:</label>
+                            </div>
+                            <select type="text" class="form-control" asp-for="IdEstadoArticulo" asp-items="ViewBag.IdEstadoArticulo"></select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" asp-for="NombreArticulo">Nombre:</label>
+                            </div>
+                            <input type="text" class="form-control" asp-for="NombreArticulo" />
+                            <span asp-validation-for="NombreArticulo" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" asp-for="Descripcion">Descripción:</label>
+                            </div>
+                            <input type="text" class="form-control" asp-for="Descripcion" />
+                            <span asp-validation-for="Descripcion" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="cajaform row">
+                <div class="col-12 tit">Datos Complementarios</div>
+
+                <div class="col-6">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" asp-for="Serie">Serie:</label>
+                            </div>
+                            <input type="text" class="form-control" asp-for="Serie" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" asp-for="Modelo">Modelo:</label>
+                            </div>
+                            <input type="text" class="form-control" asp-for="Modelo" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" asp-for="Marca">Marca:</label>
+                            </div>
+                            <input type="text" class="form-control" asp-for="Marca" />
+                            <span asp-validation-for="Marca" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" asp-for="PrecioUnitario">Precio Unitario:</label>
+                            </div>
+                            <input type="text" class="form-control" asp-for="PrecioUnitario" />
+                            <span asp-validation-for="PrecioUnitario" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" asp-for="Genero">Genero:</label>
+                            </div>
+                            <select type="text" class="form-control" asp-for="Genero" asp-items="ViewBag.Genero"></select>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+
+
+    <div class="row cajaboton">
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+            <input type="submit" value="Guardar" class="btnguardar btn btn-primary" />
+            <input value="Cancelar" type="reset" class="btncancelar btn btn-primary" />
+        </div>
+
+
+        <div class="col-lg-4 col-md-4 col-sm-none col-xs-none"></div>
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 botones">
+            <a class="btnverlista" asp-action="Index">Ver lista</a>
+        </div>
+    </div>
+    </form>
+</div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,132 @@
+﻿@model BarterEvolution.Infrastructure.Prorrogas
+
+@{ ViewData["Title"] = "Create";
+                Layout = "~/Views/Shared/_Layout.cshtml"; }
+
+<div class="row">
+    <div class="col-12">
+        <h6 class="tituloformulario">GENERAR PRÓRROGA</h6>
+        <hr class="lineatitulo">
+    </div>
+    <div class="col-12">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="cajaform row">
+                <div class="col-12 tit">Información prórroga</div>
+
+                <div class="col-6">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" asp-for="NoProrroga">No. prórroga:</label>
+                            </div>
+                            <input type="text" class="form-control" asp-for="NoProrroga" />
+                            <span asp-validation-for="NoProrroga" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" asp-for="NoContrato">No contrato:</label>
+                            </div>
+                            <select type="text" class="form-control" asp-for="NoContrato" asp-items="ViewBag.NoContrato"></select>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-6">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" asp-for="ValorMes">Valor prórroga:</label>
+                            </div>
+                            <input type="text" class="form-control" asp-for="ValorMes" />
+                            <span asp-validation-for="ValorMes" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" asp-for="MesesAPagar">Meses a pagar:</label>
+                            </div>
+                            <input type="text" class="form-control" asp-for="MesesAPagar" />
+                            <span asp-validation-for="MesesAPagar" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" asp-for="DiasVencidos">Días vencidos:</label>
+                            </div>
+                            <input type="text" class="form-control" asp-for="DiasVencidos" />
+                            <span asp-validation-for="DiasVencidos" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+            <div class="cajaform row">
+                <div class="col-12 tit">Fechas prórroga</div>
+
+                <div class="col-6">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" asp-for="FechaInicioProrroga">Fecha inicio:</label>
+                            </div>
+                            <input class="form-control" asp-for="FechaInicioProrroga" />
+                            <span asp-validation-for="FechaInicioProrroga" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" asp-for="FechaVencimientoProrroga">Fecha vencimiento:</label>
+                            </div>
+                            <input class="form-control" asp-for="FechaVencimientoProrroga" />
+                            <span asp-validation-for="FechaVencimientoProrroga" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+
+
+    <div class="row cajaboton">
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+            <input type="submit" value="Guardar" class="btnguardar btn btn-primary" />
+            <input value="Cancelar" type="reset" class="btncancelar btn btn-primary" />
+        </div>
+
+
+        <div class="col-lg-4 col-md-4 col-sm-none col-xs-none"></div>
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 botones">
+            <a class="btnverlista" asp-action="Index">Ver lista</a>
+        </div>
+    </div>
+    </form>
+</div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
