@@ -81,11 +81,13 @@
     color:white;
 }
 .btnmodificar {
-    background: rgba(48, 63, 159, 0.8);
+    background: #F08323;
     border: none;
     border-radius: 5%;
     padding: 7px 10px;
     color: white;
+    margin-right: 10px;
+    margin-left: 0px;
 }
 
 h6 {
@@ -275,4 +277,13 @@ textarea {
 .tituloformulario{
     margin-top: 4vh;
     font-size:30px;
+}
+.Editar {
+    background: #F08323;
+    border: none;
+    border-radius: 5%;
+    padding: 7px 10px;
+    color: white;
+    margin-right: 10px;
+    margin-left: 0px;
 }
